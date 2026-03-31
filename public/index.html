@@ -588,8 +588,14 @@ Do not include any text outside the JSON.`;
       });
 
       if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.error || 'Failed to analyze media.');
+        let errMessage = 'Failed to analyze media.';
+        try {
+          const errData = await response.json();
+          errMessage = errData.error || errMessage;
+        } catch (e) {
+          errMessage = await response.text() || errMessage;
+        }
+        throw new Error(errMessage);
       }
 
       setProgress(75, 'Processing results...');

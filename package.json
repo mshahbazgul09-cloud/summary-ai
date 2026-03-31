@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "AI-powered media summarizer with OpenAI backend",
   "main": "api/summarize.js",
+  "type": "module",
   "scripts": {
     "dev": "vercel dev"
   },
