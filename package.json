@@ -1,0 +1,16 @@
+{
+  "name": "summary-ai",
+  "version": "1.0.0",
+  "description": "AI-powered media summarizer with OpenAI backend",
+  "main": "api/summarize.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "openai": "^4.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}
